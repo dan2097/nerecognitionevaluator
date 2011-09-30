@@ -1,0 +1,64 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>dan2097.org.bitbucket</groupId>
+	<artifactId>ne-recognition-evaluator</artifactId>
+	<name>NE Recognition Evaluator</name>
+	<version>0.1-SNAPSHOT</version>
+	<description></description>
+	<licenses>
+		<license>
+			<name>Artistic License 2.0</name>
+			<url> http://www.opensource.org/licenses/artistic-license-2.0.php</url>
+		</license>
+	</licenses>
+  <packaging>jar</packaging>
+	<developers>
+		<developer>
+			<name>Daniel Lowe</name>
+			<email>dl387@cam.ac.uk</email>
+			<url>http://bitbucket.org/dan2097</url>
+			<organization>University of Cambridge</organization>
+			<organizationUrl>http://www.cam.ac.uk</organizationUrl>
+			<roles>
+			   <role>Lead Programmer</role>
+			</roles>
+		</developer>
+	</developers>
+	<repositories>
+	  <repository>
+	    <id>ucc</id>
+	    <url>https://maven.ch.cam.ac.uk/m2repo</url>
+	  </repository>
+	</repositories>
+	<build>
+	  <plugins>
+	    <plugin>
+	      <groupId>org.apache.maven.plugins</groupId>
+	      <artifactId>maven-compiler-plugin</artifactId>
+	      <configuration>
+	        <source>1.5</source>
+	        <target>1.5</target>
+	      </configuration>
+	    </plugin>
+	    <plugin>
+	      <groupId>org.apache.maven.plugins</groupId>
+	      <artifactId>maven-surefire-plugin</artifactId>
+	      <configuration>
+	        <testFailureIgnore>false</testFailureIgnore>
+	      </configuration>
+	    </plugin>
+	  </plugins>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>uk.ac.cam.ch.opsin</groupId>
+			<artifactId>opsin-document-extractor</artifactId>
+			<version>0.3-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>uk.ac.cam.ch.wwmm.oscar</groupId>
+			<artifactId>oscar4-api</artifactId>
+			<version>4.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+</project>
