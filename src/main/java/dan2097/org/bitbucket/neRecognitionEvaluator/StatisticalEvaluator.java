@@ -41,8 +41,8 @@ public class StatisticalEvaluator {
 		int totalEntitiesFound = truePositives + falsePositives;
 		double precision = (double)truePositives/(double) totalEntitiesFound;
 		double fscore = (2* precision * recall)/(precision + recall);
-		System.out.println(recall);
 		System.out.println(precision);
+		System.out.println(recall);
 		System.out.println(fscore);
 	}
 }
