@@ -41,6 +41,9 @@ public class CorpusGenerator {
 			String namedEntitySurface = lineContents[3];
 			String annotation = lineContents[4].substring(1);
 			if (!namedEntitySurface.equals("")){
+				if (entityTypeIsOutOfScope(annotation)){
+					continue;
+				}
 				expectedEntities.add(new NamedEntity(namedEntitySurface, startPosition, annotation));
 			}
 			for (int i = lastEndingIndice; i < startPosition; i++) {
@@ -51,5 +54,10 @@ public class CorpusGenerator {
 		}
 		String sentence = sb.toString();
 		return new Corpus(sentence, expectedEntities);
+	}
+	
+	private static boolean entityTypeIsOutOfScope(String annotation) {
+		return !annotation.equals("B-IUPAC") && !annotation.equals("B-PARTIUPAC") && !annotation.equals("B-FAMILY") &&
+				!annotation.equals("B-SUM") && !annotation.equals("B-TRIVIAL") && !annotation.equals("B-ABBREVIATION");
 	}
 }
